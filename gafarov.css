@@ -1,0 +1,97 @@
+/****************************************************************************************************************************/
+/****************************************************************************************************************************
+	    file:  gafarov.css
+	contents:  Template for job market websites originaly designed for Bulat Gafarov
+	  author:  Bruno Salcedo -- https://brunosalcedo.com
+	    date:  October 2016
+	 version:  3.2
+*****************************************************************************************************************************/
+/**************************************************************************************************************** CSS reset */
+html{font-size:100%;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;
+	text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased;}
+html,body,div,span,h1,h2,h3,p,a,code,em,img,strong,ol,ul,li,label,table,tbody,tfoot,thead,tr,th,td,
+header, nav,section,main{margin:0;padding:0;vertical-align:baseline;
+	-webkit-transition-property: background-color, border-color, color;
+    transition-property: background-color, border-color, color;
+    -webkit-transition-duration: 1.6s;
+	transition-duration: 1.6s;}
+header,nav,section,main{display:block;}
+sup {font-size:75%;line-height:0;position:relative;vertical-align:baseline;top:-0.5em;}
+a{background-color:transparent;text-decoration: none;}
+a:active,a:hover{outline:0;}
+/*{border:1px solid black;}  /* show all borders to edit design  */
+/****************************************************************************************************************************/
+/**************************************************************************************************************** structure */
+body{position:relative;width:100%;max-width:980px;margin:0 auto;overflow-y:scroll;overflow-x: hidden;line-height: 1.5;
+	font-size:100%;font-family: 'Taviraj', serif;font-weight: 300;}
+body:before{ /*Scrolliong hack*/ content: "";display: block;height: 1px;background-color: tan;}
+header{z-index: 2;position:fixed;top:0;left: 0;height: 3em;width: 100%;text-align: center;
+	box-shadow: 0 1px 12px #aaa;box-shadow: 0 1px 12px rgba(0,0,0,0.3);background-color: black;color: white;}
+section{position: relative;padding: 6em 0;border-top: 10px solid #ccc;}
+/****************************************************************************************************************************/
+/******************************************************************************************************************* header */
+h1{position: absolute;left: 50%;margin-left: -490px; /* 980px/2 */ width: 207px; /* 175px + 2em, 175px is length of name */
+	height: 2em;line-height: 2em;white-space: nowrap;font-size: 150%;font-weight: bold;text-align: left;}
+header > span{display: none;}
+/****************************************************************************************************************************/
+/********************************************************************************************************************* menu */
+nav{position: absolute;top:0;right: 0;left: 50%;margin-left: -283px; /*490px -207px*/height: 48px; 
+	line-height: 46px; /* 48px- 2px*/ white-space: nowrap;background: white;color: black;}
+nav a{display: block; float: left; padding: 0 2em; text-transform: lowercase; color:inherit; border-top: 2px solid white; }
+nav a:hover{border-color: black;}
+nav a i.fa{display: none;}
+/****************************************************************************************************************************/
+/************************************************************** contents ****************************************************/
+h2{padding: 16px 0;font-size: 120%;text-align: left;margin-top: 4em;border-bottom: 2px solid #ccc;}
+h3{padding: 16px 0 8px;font-size: 100%;text-align: left;}
+h2:first-of-type{margin-top:0 ;}
+p{text-align: justify;}
+ul,p{padding: 0 3em 2em;}
+ul{margin: 0 ; text-align: left; list-style-type: none;}
+li{margin-left:3em; text-indent: -3em;}
+a{text-decoration: none;}
+.center{text-align: center;}
+/****************************************************************************************************************************/
+/********************************************************  Show abstracts ***************************************************/
+input[type=checkbox]{position: fixed;top:0;left:0;opacity: 0;}
+input[type=checkbox] + p,input[type=checkbox] + ul{display: none;}
+input[type=checkbox]:checked + p,input[type=checkbox]:checked + ul{display: block;}
+article label:before{content:'Show ';}
+article label + label,article a + label{margin-left: 1em;}
+/****************************************************************************************************************************/
+/************************************************************  Picture ******************************************************/
+#contact,#home{ min-height: 100vh;	padding: 0;}
+#contact p:first-of-type{margin-top: 6em;}
+#home figure{position: relative; padding: 6em 0; width: 100%; max-width: 590px; margin: 0 auto;}
+#home figure img{display:block; margin: 0 auto 3em; width: 90%; max-width: 420px;}
+#home figure figcaption{text-align: center;}
+/****************************************************************************************************************************/
+/**************************************************************************************************** color palette B (red) */
+/* accents */
+header,h1{background-color: #a22}
+.current,nav a:hover{border-color:#a22;}
+.journal{color:#a22;}
+nav i{color: #6f6660;}
+/* accents */
+main a,label{color: #24b;}
+strong{color:black; }
+/* grays */
+.current,nav a:hover, main a:hover,label:hover{background-color: #eee; cursor: pointer;}
+section,h2{border-color: #ccc6c0;}
+/****************************************************************************************************************************/
+/********************************************************** Responsive ******************************************************/
+/* Switch to compact mode for smaller screens */
+@media(max-width: 1024px){
+	header{background-color: white;}
+	h1{float: left;padding: 0 1.5em;position: relative;top:0;left: 0;margin:0;width: auto;}
+	nav{position: relative;top:0;right: 0;left: 0;margin: 0;width: auto;float: left;}
+	nav a{padding: 0 1em;}
+	main{padding: 0 3%;}
+	section{padding-top: 4em;}
+	ul,p{padding: 0 0 2em 1em;text-align: left;}
+	li{margin-left:1.5em; text-indent: -1.5em;}
+}
+/* Switch to icons  and short title*/
+@media(max-width: 769px){ nav a i.fa{display: inline-block;} nav a span{display: none;}}
+@media(max-width: 588px){h1 span{display: none;}}
+
